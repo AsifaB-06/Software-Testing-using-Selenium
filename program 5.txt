@@ -1,0 +1,20 @@
+//To Locate a link by selecting multiple items in a drop down
+
+package dropdownpackage;  
+import org.openqa.selenium.By;  
+import org.openqa.selenium.WebDriver;  
+import org.openqa.selenium.chrome.ChromeDriver;  
+import org.openqa.selenium.support.ui.Select;  
+public class dropdown   
+{  
+ 	public static void main(String[] args)   
+	{  
+  		System.setProperty("webdriver.chrome.driver", "/home/skasc/Downloads/chromedriver");  
+  		WebDriver driver = new ChromeDriver();  
+  		driver.get("file:/home/downloads/eclipse/19MSS032/pro5.html");  
+  		driver.get("https://jsbin.com/osebed/2");  
+  		Select fruits = new Select(driver.findElement(By.id("fruits")));  
+  		fruits.selectByVisibleText("Banana");  
+  		fruits.selectByIndex(1);  
+  	}  
+ } 
