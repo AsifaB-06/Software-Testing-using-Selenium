@@ -1,0 +1,22 @@
+//Automate the test case by dynamic XPath in selenium using Double Slash
+
+package ex12automate;  
+import org.openqa.selenium.By;  
+import org.openqa.selenium.WebDriver;  
+import org.openqa.selenium.chrome.ChromeDriver;  
+public class automate  
+{  
+	public static void main(String[] args)  
+	{ 
+		System.setProperty("webdriver.chrome.driver","/home/skasc/Downloads/chromedriver"); 
+		String baseUrl = "https://demoqa.com/text-box";  
+		WebDriver driver = new ChromeDriver();  
+		driver.get(baseUrl);  
+		driver.manage().window().maximize();  
+		Boolean imgFlag = driver.findElement(By.xpath("/html/body/div/header/a/img")).isDisplayed();  
+		System.out.println("The image is displayed : " + imgFlag);  
+		Boolean img_Flag = driver.findElement(By.xpath("//img")).isDisplayed(); 
+		System.out.println("The image is displayed (located by //) : " + img_Flag);  
+		driver.close();  
+ 	}  
+} 
