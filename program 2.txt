@@ -1,0 +1,28 @@
+//Test the case to print a message to display that the website is opened successfully wait for 5 seconds and close the browser
+
+package ex2package;  
+import org.openqa.selenium.By;    
+import org.openqa.selenium.JavascriptExecutor;    
+import org.openqa.selenium.WebDriver;    
+import org.openqa.selenium.chrome.ChromeDriver;  
+public class ex2class   
+{  
+	public static void main(String[] args) throws InterruptedException 
+	{  
+		System.setProperty("webdriver.chrome.driver","/home/skasc/Downloads/chromedriver"); 
+		String expectedtitle="Google";  
+		String actualtitle="";       
+		WebDriver driver=new ChromeDriver();    
+		driver.navigate().to("http://www.google.com/");  
+		driver.manage().window().maximize();    
+		JavascriptExecutor js = (JavascriptExecutor)driver; 
+		js.executeScript("scrollBy(0, 5000)");    
+		actualtitle=driver.getTitle();  
+		if(actualtitle.contentEquals(expectedtitle))  
+		{  
+			System.out.println("Test Passed");  
+		}  
+		Thread.sleep(5000);  
+		driver.close();  
+	}  
+}  
