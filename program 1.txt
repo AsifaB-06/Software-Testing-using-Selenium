@@ -1,0 +1,21 @@
+//Develop a test to Open Firefox Browser using Selenium Web Driver
+
+package openwebpagepackage; 
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;   
+import org.openqa.selenium.WebDriver;   
+import org.openqa.selenium.chrome.ChromeDriver; 
+public class openwebpageclass  
+{ 
+ 	public static void main(String[] args)  
+	{ 
+		System.setProperty("webdriver.chrome.driver","/home/skasc/Downloads/chromedriver");
+		WebDriver driver=new ChromeDriver(); 
+		driver.navigate().to("http://www.javapoint.com/"); 
+		driver.manage().window().maximize();   
+		JavascriptExecutor js = (JavascriptExecutor)driver;   
+		js.executeScript("scrollBy(0, 5000)", args);    
+		driver.findElement(By.linkText("Core Java")).click();      
+ 	} 
+}
+
